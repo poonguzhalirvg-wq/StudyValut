@@ -98,7 +98,7 @@ dialog.big .f.wide{width:100%;height:100%;display:flex;flex-direction:column;min
 <body>
 <canvas id="bg" aria-hidden="true"></canvas><div class="orb o1"></div><div class="orb o2"></div>
 <div id="app">
-  <aside id="side"><div class="brand">✦ StudyVault</div><nav id="nav" aria-label="Main navigation"></nav><div class="by">Built by <b>Vinit poonguzhali</b></div></aside>
+  <aside id="side"><div class="brand">✦ StudyVault</div><nav id="nav" aria-label="Main navigation"></nav><div class="by">Built by <b>Vinit Poonguzhali</b></div></aside>
   <div id="col">
     <header><button id="menu" class="b" aria-label="Toggle menu">☰</button><input id="q" type="search" placeholder="Search projects, files, prompts…" aria-label="Global search"><button id="theme" class="b" aria-label="Toggle dark or light mode">◐</button></header>
     <main id="main" tabindex="-1"></main>
@@ -126,7 +126,7 @@ function gate(msg, btn, fn, ask) {
   return new Promise(res => {
     const d = document.createElement('div');
     d.style.cssText = 'position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#0a0f2c;color:#e8ecff;padding:20px;text-align:center;font:16px system-ui';
-    d.innerHTML = `<div style="max-width:540px"><h1>✦ StudyVault</h1><p>${msg}</p>${ask ? `<p style="margin:20px 0 6px"><label for="gn">Your name (shown in your welcome message)</label></p><input id="gn" maxlength="60" placeholder="Enter your name" autocomplete="name" value="${esc(cn)}" style="max-width:340px;text-align:center;margin-bottom:18px">` : ''}<button class="b p" id="gb">${btn}</button><p id="ge" style="color:#ff7b8f"></p><small style="margin-top:18px">Built by Vinit poonguzhali</small></div>`;
+    d.innerHTML = `<div style="max-width:540px"><h1>✦ StudyVault</h1><p>${msg}</p>${ask ? `<p style="margin:20px 0 6px"><label for="gn">Your name (shown in your welcome message)</label></p><input id="gn" maxlength="60" placeholder="Enter your name" autocomplete="name" value="${esc(cn)}" style="max-width:340px;text-align:center;margin-bottom:18px">` : ''}<button class="b p" id="gb">${btn}</button><p id="ge" style="color:#ff7b8f"></p><small style="margin-top:18px">Built by Poonguzhali</small></div>`;
     if (ask) d.querySelector('#gn').addEventListener('keydown', e => { if (e.key === 'Enter') d.querySelector('#gb').click(); });
     document.body.append(d);
     d.querySelector('#gb').onclick = async () => {
@@ -378,7 +378,7 @@ $('#nav').innerHTML=NAV.map(([id,l,i])=>`<button data-a="go" data-id="${id}"><sp
 (()=>{if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=$('#bg'),x=c.getContext('2d');let w,h;const ps=[...Array(45)].map(()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,s:Math.random()*4e-4+1e-4})),rs=()=>{w=c.width=innerWidth;h=c.height=innerHeight};rs();addEventListener('resize',rs);(function t(){if(!document.hidden){x.clearRect(0,0,w,h);x.fillStyle='rgba(160,150,255,.6)';x.shadowBlur=8;x.shadowColor='#8b7bff';for(const p of ps){p.y=(p.y-p.s+1)%1;x.beginPath();x.arc(p.x*w,p.y*h,p.r,0,7);x.fill()}}requestAnimationFrame(t)})()})();
 /* landing splash - shown on every start (branding) */
 const splash=()=>new Promise(res=>{const d=document.createElement('div');d.id='splash';let i=0,done=0;
- d.innerHTML=`<div class="sp-glow"></div><div class="sp-in"><h1 class="sp-t" aria-label="Welcome to Study Vault">${'Welcome to Study Vault'.split(' ').map(w=>`<span class="sp-w" aria-hidden="true">${[...w].map(c=>`<span style="animation-delay:${(.3+(i++)*.07).toFixed(2)}s">${c}</span>`).join('')}</span>`).join(' ')}</h1><div class="sp-line"></div><p class="sp-by">Built by</p><p class="sp-n">Vinit poonguzhali</p><small class="sp-skip">Click to continue</small></div>`;
+ d.innerHTML=`<div class="sp-glow"></div><div class="sp-in"><h1 class="sp-t" aria-label="Welcome to Study Vault">${'Welcome to Study Vault'.split(' ').map(w=>`<span class="sp-w" aria-hidden="true">${[...w].map(c=>`<span style="animation-delay:${(.3+(i++)*.07).toFixed(2)}s">${c}</span>`).join('')}</span>`).join(' ')}</h1><div class="sp-line"></div><p class="sp-by">Built by</p><p class="sp-n">Poonguzhali</p><small class="sp-skip">Click to continue</small></div>`;
  document.body.append(d);const end=()=>{if(done)return;done=1;d.classList.add('out');setTimeout(()=>{d.remove();res()},700)};
  setTimeout(()=>{d.onclick=end},4200);setTimeout(end,7000)});
 /* boot */
